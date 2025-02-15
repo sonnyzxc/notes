@@ -83,7 +83,7 @@ DSU (D data -> D signal)
 CODEC (A data -> D signal)
 
 데이터 단말기 (DTE - Data Terminal Equipment), 데이터 회선 종단장치 (Data Circuit-Termianting Equipment)
-- 기계적 인터페이스 - RS-232C (w/ 25pin)
+- 기계적 인터페이스 - RS-232C (w/ 25pin); made in ITU-T; 물리, 데이터 링크, 네트워크 계층
 페킷형 터미널을 위한 DTE/DCE 접속 규격은 X25
 
 주파수 분할 다중화기 (FDM) - 보호 대역 (guard band) -> 채널 간섭을 막기 위함
@@ -100,23 +100,74 @@ CODEC (A data -> D signal)
 변조 속도: baud = 1/T
 데이터 신호 속도 (bps) = 변조 속도 (baud) x 변조 시 상태 변화 수 (monobit, dibit, tribit, quadbit)
 샤논 (Shannon)의 정의: $$C = W \times log_{2}{(1 + \frac{S}{N})[bps]}$$ C = 통신 용량 (Capacity, max achievable data rate), W = 대역폭, S = 신호 전력 (signal power), N = 잡음 전력 (noise power)
-- 전송로의 통신 용량을 늘리기 위한 방법 (주파소 대역폭 up, 신호 세력 up, 잡음 세력 down)
+- 통신 용량을 늘리는 방법: 주파소 대역폭 up, 신호 세력 up, 잡음 세력 down
 
-진폭 편이 변저 (ASK): 2진수 0과 1을 서로 다른 진폭의 신호로 변조
-주파수 편이 변조 (FSK): 2진수 0과 1을 서로 다른 주파수로 변조
-위상 편이 변조 (PSK):  2진수 0과 1을 서로 다른 위상을 갖는 신호로 변조
-직교 진폭 변조 (QAM): 반송파의 진폭과 위상을 상호 변환하여 신호를 얻는 변조 방식
+디지털 변조: D data -> A signal (via a modem)
+진폭 편이 변저 (Amplitude Shift Key): represent 진폭 using binary
+주파수 편이 변조 (Frequency SK): repsent 주파수 using binary
+위상 편이 변조 (Phase SK):  repsent 위상 using binary
+직교 진폭 변조 (Quadrature Amplitude Moulation): 진폭 + 위상 
+
+펄스 코드 변조 (Pulse Code Modulation) 순서:
+송신 측 (표본화 (Sampling) -> 양자화 (Quantising) -> 부호화 (Encoding)) -> 
+수신 측 (복호화 (Decoding) -> 여과화 (Filtering))
+
+샤논 (Nyquist Shanon)의 표본화 이론: 어떤 신호 $f_{(t)}$ 가 의미를 지니는 최고 주파소보다 2배 이상이 주파수로 균일한 시간 간격 동안 채집된다면 이채집된 데이터는 원래의 신호가 가진 모든 정보를 포함한다
+- 표본화 횟수 = 2배 x 최고 주파수
+- 표본화 간격 = 1 / 표본화 횟수
+
+[[Dictionary#ㄷ|동기적]] 전송 - 블록 (프레임) made in advance; 원거리;
+- blocking (execution of each operation depends on completing one before it)
+[[Dictionary.md#ㅂ|비동기]] 전송 - 시작, 정지 비트 (per 문자); partiy bit; 프레이밍 에러 가능성 higher; 단러기  
+- non-blocking (execution independent)
+
+전송 제어 (Transmission Control) - 데이터 링크 계층 (2계층)
+데이터 통신 회선의 접수 -> 데이터 링크 설정 (확립) -> 정보 메시지 전송 -> 데이터 링크 종결 -> 데이터 통신 회선의 전달
+
+HDLC (High-Level Data Link Control) - 비트 위주의 프로토콜; 각 프레임에 데이터 흐름을 제어; 오류 보정할 수 있는 비트 열을 삽입 (insert) then 전송
+- 구조: 플래그 (Flag), 주소부 (Control Field), 제어부 (Control Field), 정보부 (Information Field), FCS (Frame Check Sequence, 프레임 검사 순서 필드)
+- 전송 모드: NRM (표준 응답), ARM (비동기), ABM (비동기 균형)
+
+오류 발생 원인: [[Dictionary#ㄱ|감쇠]] (attenuation), 지연 왜곡 (delay distortion), 백색 잡음 (white noise), 상호 변조 잡음 (intermodulation noise), 누화 잡음 = 혼선 (cross talk noise), 충격성 잡음 (impulse noise)
+
+자동 반복 요청 (ARQ) - 정지-대기 (Stop and Wait), 연속 (Continuous) => Go-Back-N, 선택적 재전송 (Selective Repeat), 적응적 (Adaptive)
+
+해밍 코드 (Hamming Code) - 수신 측에서 오류가 발생한 비트를 검출한 후 직접 수정 하는 전진(순방향) 오류 수정; 자기정정 부호방식
+패리티 비트 - 1비트 오류만 검출
+CRC - 다항식 코드; using HDLC's FCS
+Block Sum Check - 문자 블록에 대해 수평/수직 패리티 검사
+
+통신 프로토콜 기본 요소 (elements) - 구문 (syntax => 데이터 형식, 부호화 encoding, 신호 레벨), 의미 (semantics => 협조 사항과 오류 관리; 제어 정보 규정), 시간 (timing => 통신 속도, 메시지 순서)
+
+TCP/IP 계층
+- 응용 - TELNET, FTP, SMTP, SNMP, E-Mail
+- 전송 - TCP, UDP
+- 인터넷/네트워크 - IP, ICMP, IGMP, ARP, RARP
+- 네트워크 액세스 : Ethernet, IEEE 802, HDLC, X.25, RS-232C
+
+UDP - 비연결성 (connectionless); 실시간 유리; 신뢰성보다 속도 중요시; 
+
+OSI:
+1. 응용 - HCI layer, where applications can access the network services (TELNET, FTP, SMTP, SNMP, HTTP)
+2. 표현 - ensures data is in a usable format (also where encryption occurs)
+3. 세션 - maintains connections and is responsible for controlling ports and sessions
+4. 전송 - transmits data using transmission protocls (TCP, UDP)
+5. 네트워크 - decies which physical path the data will take (X.25, IP, ICMP, IGMP)
+	- 데이터 교환
+6. 데이터 - defines the format of data on the network (HDLC, LAPB, LLC, MAC, LAPD, PPP, BSC)
+7. 물리 - transmits raw bit streams over physical medium (RS-232C, X.21)
+
 
 - **애플리케이션 설계**
 - **테스트 및 배포**
 - **정보시스템 기반 기술 용어**
 ### 2. 프로그래밍 언어 활용
-1. 프로그래밍 언어 활용
-2. 프로그램 구현
+8. 프로그래밍 언어 활용
+9. 프로그램 구현
 ### 3. 데이터베이스 활용
-1. 데이터베이스의 이해
-2. SQL 활용
-3. 데이터베이스 프로그래밍
+10. 데이터베이스의 이해
+11. SQL 활용
+12. 데이터베이스 프로그래밍
 
 ---
 to cleanup:

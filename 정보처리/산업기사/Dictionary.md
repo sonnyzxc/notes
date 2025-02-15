@@ -1,9 +1,11 @@
 ### ㄱ
+감쇠 - attenuation
 교착상태 - deadlock
 ### ㄴ
 ### ㄷ
 다중화기 - multiplexer
-동기화 기법 - synchronisation
+단방항 - simplex
+동기화 - synchronisation
 대역폭 - bandwidth
 대화식 - interaction
 ### ㄹ
@@ -13,6 +15,7 @@
 변조 - modulation
 병행 프로세스 - concurrent process
 복조 - demodulatioon
+비동기 - asynchronous
 ### ㅅ
 색인 - index
 ### ㅇ
@@ -24,6 +27,7 @@
 정수 - integer
 주파수 - frequency
 증폭 - amplify
+진폭 - amplitude
 ### ㅊ
 ### ㅋ
 ### ㅌ
