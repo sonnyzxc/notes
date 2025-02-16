@@ -17,6 +17,8 @@
 복조 - demodulatioon
 비동기 - asynchronous
 ### ㅅ
+상수 - constant
+수립 - establish
 색인 - index
 ### ㅇ
 양(의 값) - positive
@@ -25,11 +27,16 @@
 ### ㅈ
 적재 - load
 정수 - integer
+정형 - structured
+주석 - comment (in programming)
 주파수 - frequency
 증폭 - amplify
 진폭 - amplitude
 ### ㅊ
+추상 - abstract
 ### ㅋ
 ### ㅌ
 ### ㅍ
 ### ㅎ
+함수 - function
+형산 관리 - configuration management
