@@ -1,5 +1,6 @@
 ### ㄱ
 감쇠 - attenuation
+구역성 - locality
 교착상태 - deadlock
 ### ㄴ
 ### ㄷ
