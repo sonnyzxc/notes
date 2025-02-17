@@ -5,6 +5,7 @@
 ### ㄴ
 ### ㄷ
 다중화기 - multiplexer
+다형성 - polymorphism
 단방항 - simplex
 동기화 - synchronisation
 대역폭 - bandwidth
@@ -19,6 +20,7 @@
 비동기 - asynchronous
 ### ㅅ
 상수 - constant
+선언 - declare
 수립 - establish
 색인 - index
 ### ㅇ
@@ -34,7 +36,7 @@
 증폭 - amplify
 진폭 - amplitude
 ### ㅊ
-추상 - abstract
+추상(화) - abstract(ion)
 ### ㅋ
 ### ㅌ
 ### ㅍ
