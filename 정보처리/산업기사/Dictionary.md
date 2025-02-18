@@ -22,6 +22,7 @@
 상수 - constant
 선언 - declare
 수립 - establish
+실수 - real number
 색인 - index
 ### ㅇ
 양(의 값) - positive
