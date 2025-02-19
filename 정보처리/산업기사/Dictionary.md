@@ -1,5 +1,6 @@
 ### ㄱ
 감쇠 - attenuation
+교집합 - intersection
 구역성 - locality
 교착상태 - deadlock
 ### ㄴ
@@ -26,10 +27,12 @@
 색인 - index
 ### ㅇ
 양(의 값) - positive
+이식성 - portability
 이중 - duplex (e.g. 전/반이중 full/half)
 임계 구역 - critical section
 ### ㅈ
 적재 - load
+전력 - strategy
 정수 - integer
 정형 - structured
 주석 - comment (in programming)
