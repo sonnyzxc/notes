@@ -8,6 +8,10 @@ Happy noting! 🎉
 ## Currently Working On
 - :desktop_computer: [정보처리산업기사 (Industrial Engineer Information Processing)](https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=2290)
 
+## Tech Used
+[![Tech Used](https://skillicons.dev/icons?i=latex,md,obsidian)](https://skillicons.dev)
+
+
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
