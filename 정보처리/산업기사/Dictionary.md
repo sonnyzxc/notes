@@ -16,7 +16,7 @@
 무결성 - integrity
 ### ㅂ
 변조 - modulation
-병행 프로세스 - concurrent process
+병행 - concurrent
 복조 - demodulatioon
 비동기 - asynchronous
 ### ㅅ
