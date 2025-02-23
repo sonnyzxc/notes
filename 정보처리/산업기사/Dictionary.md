@@ -19,6 +19,7 @@
 병행 - concurrent
 복조 - demodulatioon
 비동기 - asynchronous
+배제 - exclude
 ### ㅅ
 상수 - constant
 선언 - declare
@@ -34,6 +35,7 @@
 적재 - load
 전력 - strategy
 정수 - integer
+정제 - refine
 정형 - structured
 주석 - comment (in programming)
 주파수 - frequency
