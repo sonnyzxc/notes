@@ -3,7 +3,6 @@
 교집합 - intersection
 구역성 - locality
 교착상태 - deadlock
-### ㄴ
 ### ㄷ
 다중화기 - multiplexer
 다형성 - polymorphism
@@ -11,7 +10,6 @@
 동기화 - synchronisation
 대역폭 - bandwidth
 대화식 - interaction
-### ㄹ
 ### ㅁ
 무결성 - integrity
 ### ㅂ
@@ -43,9 +41,6 @@
 진폭 - amplitude
 ### ㅊ
 추상(화) - abstract(ion)
-### ㅋ
-### ㅌ
-### ㅍ
 ### ㅎ
 함수 - function
 형산 관리 - configuration management
