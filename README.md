@@ -5,8 +5,11 @@ Welcome to the **Notes Repository**! This is a stash of random notes on various 
 
 Happy noting! 🎉
 
+
 ## Currently Working On
-- :desktop_computer: [정보처리산업기사 (Industrial Engineer Information Processing)](https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=2290)
+- :desktop_computer: [정보처리산업기사 (Industrial Engineer Information Processing)](https://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=2290) [February 2025 ~ Present]
+- [TEPS](https://www.teps.or.kr/) [March 2025 ~ Present]
+
 
 ## Tech Used
 [![Tech Used](https://skillicons.dev/icons?i=latex,md,obsidian)](https://skillicons.dev)
