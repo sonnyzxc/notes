@@ -1,9 +1,7 @@
 # Notes :book:
 ![](https://tokei.rs/b1/github/sonnyzxc/notes)
 
-Welcome to the **Notes Repository**! This is a stash of random notes on various topics collected throughout my journey!
-
-Happy noting! 🎉
+Welcome to the **Notes Repository**! This is a stash of random notes on various topics collected throughout my learning journey!
 
 
 ## Currently Working On
