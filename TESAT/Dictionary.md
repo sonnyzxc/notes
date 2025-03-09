@@ -29,6 +29,7 @@
 # ㅈ
 자본 - capital
 재화 - goods
+조세 - tax
 지대 - rent
 지불 - pay
 지출 - expenditure
