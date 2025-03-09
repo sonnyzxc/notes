@@ -7,15 +7,18 @@
 
 # ㄷ
 대가 - cost
+대공황 - The Great Depression (1929 ~ 1939)
 # ㄹ
 
 # ㅁ
+메몰비용 - sunk cost
 무상 - free
 무역 - trade
 # ㅂ
 부가가차 - added value (selling price of product - cost of bought-in materials and components)
 # ㅅ
 사회후생 - social welfare
+석유 파동 - 1973 Oil Crisis ()
 소득 - income
 소비 - consume
 # ㅇ
