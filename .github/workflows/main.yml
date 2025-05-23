@@ -27,10 +27,10 @@ jobs:
         with:
           root_file: '**/*.tex'
 
-      - name: Commit and push PDF if changed
+      - name: Commit and push PDF
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add '**/*.pdf'
+          git add $(find . -name '*.pdf')
           git diff --cached --quiet || git commit -m "Update compiled PDFs [skip ci]"
           git diff --cached --quiet || git push
