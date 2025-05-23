@@ -1,4 +1,4 @@
-name: Compile .tex Notes 
+name: Compile .tex Notes
 
 on:
   push:
@@ -20,26 +20,53 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: true 
+          persist-credentials: true
 
-      - name: Setup LaTeX
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: '**/*.tex'
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-full
 
-      - name: Commit and push PDF
+      - name: Compile all .tex files into matching .pdfs
+        run: |
+          find . -name '*.tex' | while read tex; do
+            dir=$(dirname "$tex")
+            base=$(basename "$tex" .tex)
+            pdflatex -output-directory="$dir" "$tex"
+          done
+
+      - name: Commit and push PDFs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          pdf_files=$(find . -type f -name '*.pdf')
-          if [ -n "$pdf_files" ]; then
-            git add -f $pdf_files
-            if ! git diff --cached --quiet; then
-              git commit -m "Update compiled PDFs [skip ci]"
-              git push
-            else
-              echo "No PDF changes to commit"
-            fi
+          find . -name '*.pdf' | while read file; do
+            git add -f "$file"
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m "Update compiled PDFs [skip ci]"
+            git push
           else
-            echo "No PDF files found"
+            echo "No changes to commit"
           fi
+
+      # - name: Setup LaTeX
+      #   uses: xu-cheng/latex-action@v3
+      #   with:
+      #     root_file: '**/*.tex'
+
+      # - name: Commit and push PDF
+      #   run: |
+      #     git config user.name "github-actions[bot]"
+      #     git config user.email "github-actions[bot]@users.noreply.github.com"
+      #     pdf_files=$(find . -type f -name '*.pdf')
+      #     if [ -n "$pdf_files" ]; then
+      #       git add -f $pdf_files
+      #       if ! git diff --cached --quiet; then
+      #         git commit -m "Update compiled PDFs [skip ci]"
+      #         git push
+      #       else
+      #         echo "No PDF changes to commit"
+      #       fi
+      #     else
+      #       echo "No PDF files found"
+      #     fi
